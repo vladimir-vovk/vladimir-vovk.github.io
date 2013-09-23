@@ -21,11 +21,11 @@
     <div class="container">
       <section id="main_content">
 
-        <h3>2013-09-23 Setup Moai on Ubuntu</h3>
+        <h3>/2013-09-23/ Setup Moai on Ubuntu</h3>
 
         <p>
           Moai is a mobile platform for pro game developers. For more info,
-          please, look here: http://getmoai.com
+          please, look here: <a href="http://getmoai.com">
         </p>
         <pre><code>
 * setup moai-sdk
@@ -33,7 +33,7 @@
 ** clone moai-sdk repo
   mkdir ~/moai-sdk
   sudo apt-get install git
-  git clone -b linux git@github.com:moai/moai-dev.git ~/moai-sdk
+  git clone -b linux https://github.com/moai/moai-dev.git ~/moai-sdk
 
 ** install necessary packages
    sudo apt-get install freeglut3-dev libglew-dev libglu1-mesa-dev\
@@ -60,6 +60,17 @@
    moai main.lua
 
    If everything goes OK we should see window with animation.
+
+* setup ZeroBrane as IDE
+
+  List of available IDEs:
+  http://getmoai.com/wiki/index.php?title=Tools_that_work_with_Moai
+
+  Download and install ZeroBrane:
+  wget https://download.zerobrane.com/ZeroBraneStudioEduPack-0.38-linux.sh
+  chmod +x ZeroBraneStudioEduPack-0.38-linux.sh
+  ./ZeroBraneStudioEduPack-0.38-linux.sh
+
 
         </code></pre>
       </section>
