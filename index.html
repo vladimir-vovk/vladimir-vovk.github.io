@@ -36,20 +36,21 @@
   git clone -b linux git@github.com:moai/moai-dev.git ~/moai-sdk
 
 ** install necessary packages
-   sudo apt-get install freeglut3-dev libglew-dev libglu1-mesa-dev libxmu-dev\
-   libxi-dev chipmunk-dev libjpeg8-dev libpng-dev libfreetype6-dev\
-   liblua5.1-0-dev libjansson-dev libtinyxml-dev libcurl4-openssl-dev\
-   zlib1g-dev libexpat1-dev cmake build-essential freeglut3 libxmu-dev\
-   libxi-dev cmake build-essential zlib1g-dev libssl-dev sqlite3 libsqlite3-dev\
-   libexpat-dev libcurl4-openssl-dev libasound2-dev libbox2d0 libbox2d-dev\
-   libogg-dev libvorbis-dev libpulse-dev libsdl1.2-dev libbox2d-dev
+   sudo apt-get install freeglut3-dev libglew-dev libglu1-mesa-dev\
+   libxmu-dev libxi-dev chipmunk-dev libjpeg8-dev libpng-dev\
+   libfreetype6-dev liblua5.1-0-dev libjansson-dev libtinyxml-dev\
+   libcurl4-openssl-dev zlib1g-dev libexpat1-dev cmake build-essential\
+   freeglut3 libxmu-dev libxi-dev cmake build-essential zlib1g-dev\
+   libssl-dev sqlite3 libsqlite3-dev libexpat-dev libcurl4-openssl-dev\
+   libasound2-dev libbox2d0 libbox2d-dev libogg-dev libvorbis-dev\
+   libpulse-dev libsdl1.2-dev libbox2d-dev
 
 ** compile moai-sdk
    cd ~/moai-sdk/cmake
    cmake .
    make
 
-   If everything goes OK we should have binary on ~/moai-sdk/cmake/moai/moai
+   If everything OK we should have binary on ~/moai-sdk/cmake/moai/moai
 
 ** make soft link
    ln -s /home/username/moai-sdk/cmake/moai/moai /usr/local/bin/moai
