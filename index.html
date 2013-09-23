@@ -66,11 +66,27 @@
   List of available IDEs:
   http://getmoai.com/wiki/index.php?title=Tools_that_work_with_Moai
 
-  Download and install ZeroBrane:
+** download and install ZeroBrane
   wget https://download.zerobrane.com/ZeroBraneStudioEduPack-0.38-linux.sh
   chmod +x ZeroBraneStudioEduPack-0.38-linux.sh
   ./ZeroBraneStudioEduPack-0.38-linux.sh
 
+** add moai interpreter
+   sudo vi /opt/zbstudio/cfg/user.lua
+
+   add this lines to file:
+
+   -- MOAI Path
+   path.moai = '/usr/local/bin/moai'
+
+   run ZeroBrane studio (from menu or 'zbstudio' command)
+   goto: Project -> Lua interpreter -> Moai
+
+** test it
+   goto: File -> Open -> ~/moai-sdk/samples/anim/anim-basic/main.lua
+   goto: Project -> Run
+
+   If everything goes OK we should see window with animation.
 
         </code></pre>
       </section>
