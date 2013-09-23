@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <title>Vladimir Vovk by vladimir-vovk</title>
+    <title>Vladimir Vovk</title>
   </head>
 
   <body>
@@ -16,45 +16,53 @@
     <header>
       <div class="container">
         <h1>Vladimir Vovk</h1>
-        <h2></h2>
-
-        <section id="downloads">
-          <a href="https://github.com/vladimir-vovk" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
     </header>
 
     <div class="container">
       <section id="main_content">
-        <h3>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+        <h3>2013-09-23 Setup Moai on Ubuntu</h3>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+        <p>
+          Moai is a mobile platform for pro game developers. For more info,
+          please, look here: http://getmoai.com
+        </p>
+        <pre><code>
+* setup moai-sdk
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+** clone moai-sdk repo
+  mkdir ~/moai-sdk
+  sudo apt-get install git
+  git clone -b linux git@github.com:moai/moai-dev.git ~/moai-sdk
 
-<h3>Designer Templates</h3>
+** install necessary packages
+   sudo apt-get install freeglut3-dev libglew-dev libglu1-mesa-dev libxmu-dev\
+   libxi-dev chipmunk-dev libjpeg8-dev libpng-dev libfreetype6-dev\
+   liblua5.1-0-dev libjansson-dev libtinyxml-dev libcurl4-openssl-dev\
+   zlib1g-dev libexpat1-dev cmake build-essential freeglut3 libxmu-dev\
+   libxi-dev cmake build-essential zlib1g-dev libssl-dev sqlite3 libsqlite3-dev\
+   libexpat-dev libcurl4-openssl-dev libasound2-dev libbox2d0 libbox2d-dev\
+   libogg-dev libvorbis-dev libpulse-dev libsdl1.2-dev libbox2d-dev
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+** compile moai-sdk
+   cd ~/moai-sdk/cmake
+   cmake .
+   make
 
-<h3>Rather Drive Stick?</h3>
+   If everything goes OK we should have binary on ~/moai-sdk/cmake/moai/moai
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+** make soft link
+   ln -s /home/username/moai-sdk/cmake/moai/moai /usr/local/bin/moai
 
-<h3>Authors and Contributors</h3>
+** test it
+   cd ~/moai-sdk/samples/anim/anim-basic
+   moai main.lua
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+   If everything goes OK we should see window with animation.
 
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+        </code></pre>
       </section>
     </div>
 
-    
   </body>
 </html>
