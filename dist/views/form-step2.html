@@ -1,0 +1,72 @@
+<!-- form-step2.html -->
+
+<form name="formStep2" novalidate>
+  <!-- Name  -->
+  <div class="form-group has-feedback" ng-class="validState(formStep2, 'name')">
+    <label class="control-label" for="name">Name<span class="text-danger"> *<span></label>
+    <input type="text" class="form-control" id="name" name="name" ng-model="formData.name" auto-focus required>
+    
+    <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="isInvalid(formStep2, 'name')"></span>
+    <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="isValid(formStep2, 'name')"></span>
+    <span class="help-block" ng-show="isInvalid(formStep2, 'name')">Name required</span>
+  </div>
+
+  <!-- surname -->
+  <div class="form-group has-feedback" ng-class="validState(formStep2, 'surname')">
+    <label class="control-label" for="surname">Surname<span class="text-danger"> *<span></label>
+    <input type="text" class="form-control" id="surname" name="surname" ng-model="formData.surname" required>
+    
+    <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="isInvalid(formStep2, 'surname')"></span>
+    <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="isValid(formStep2, 'surname')"></span>
+    <span class="help-block" ng-show="isInvalid(formStep2, 'surname')">Surname required</span>
+  </div>
+
+  <!-- birthday -->
+  <div class="form-group has-feedback" ng-class="validState(formStep2, 'birthdate')">
+    <label class="control-label" for="birthdate">Birthday (day/month/year)<span class="text-danger"> *<span></label>
+    <input type="text" class="form-control" id="birthdate" name="birthdate" ng-model="dummyBirthdate" ng-show="false">
+
+    <div class="form-inline">
+      <input type="text" class="form-control" name="birthday" ng-model="formData.birthDay" size=2 valid-number ng-change="updateBirthdate(formStep2)"> /
+      <input type="text" class="form-control" name="birthmonth" ng-model="formData.birthMonth" size=2 valid-number ng-change="updateBirthdate(formStep2)"> /
+      <input type="text" class="form-control" name="birthyear" ng-model="formData.birthYear" size=4 valid-number ng-change="updateBirthdate(formStep2)">
+      <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="isInvalid(formStep2, 'birthdate')"></span>
+      <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="isValid(formStep2, 'birthdate')"></span>
+    </div>
+
+    <span class="help-block" ng-show="isInvalid(formStep2, 'birthdate')">Valid birthday required</span>
+  </div>
+
+  <!-- sex -->
+  <div class="form-group has-feedback" ng-class="validState(formStep2, 'sex')">
+    <label class="control-label" for="sexMale">Sex<span class="text-danger"> *<span></label>
+    <input type="text" class="form-control" name="sex" ng-model="formData.sex" ng-show="false" required>
+    
+    <div class-"form-inline">
+      <label class="radio-inline">
+        <input type="radio" name="sexMale" value="male" ng-model="formData.sex" ng-requied="!formData.sex"> Male
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="sexFemail" value="female" ng-model="formData.sex" ng-required="!formData.sex"> Female
+      </label>
+    </div>
+
+    <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="isInvalid(formStep2, 'sex')"></span>
+    <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="isValid(formStep2, 'sex')"></span>
+    <span class="help-block" ng-show="isInvalid(formStep2, 'sex')">Select your sex</span>
+  </div>
+
+  <!-- extra info -->
+  <div class="form-group has-feedback">
+    <label class="control-label" for="info">Extra info</label>
+    <textarea class="form-control" name="info" ng-model="formData.info" rows="3" maxlength="512"></textarea>
+    <span class="help-block">{{"" + (512 - formData.info.length) + " characters left"}}</span>
+  </div>
+  
+  <!-- next button -->
+  <hr/>
+  <div class="text-center">
+    <button class="btn btn-primary" ng-click="submitStep2(formStep2)">Next step <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+  </div>
+  
+</form>
